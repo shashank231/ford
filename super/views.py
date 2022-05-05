@@ -10,6 +10,7 @@ from . forms import employeeform, orderform, typeform, laptopform, orderform
 from . filters import employeefilter
 
 # just a comment
+# another cmt
 def home(request):
     employees = employee.objects.all()
     context = {"employees": employees}
