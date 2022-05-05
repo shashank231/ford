@@ -1,0 +1,58 @@
+<style>
+    #parent{
+        margin: auto;
+        width: 70%;
+
+    }
+
+    #form1{
+        background-color: rgb(220, 238, 187);
+        padding: 33px;
+        margin: 10px;
+        width: 70%;
+        border: 3px solid black;
+        border-radius: 10px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 23px;
+    }
+    #form1 input{
+        background-color:rgb(233, 159, 159);
+        border: 2px solid black;
+        border-radius: 10px;
+        font-size: 23px;
+        padding: 15px;
+    }
+    #form1 table{
+        font-size: 23px;
+    }
+    #s1{
+        margin: 25px;
+        margin-left: 45px;
+    }
+
+    .h1{
+        margin: 30px;
+        padding: 20px;
+        border : 2px solid black;
+        display: inline-block;
+    }
+
+    
+</style>
+
+{% extends 'super/main.html' %}
+{% block content %}
+<div id="parent">
+<div class="h1">
+<h2>Add Employee</h2>
+</div>
+
+<form id = "form1" action="" method="post">
+    {% csrf_token %}
+    <table>
+    {{f1}}
+    </table>
+    <input id='s1' type="submit" name="submit">
+</form>
+</div>
+{% endblock %}

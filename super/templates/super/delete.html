@@ -1,0 +1,14 @@
+{% extends 'super/main.html' %}
+{% block content %}
+
+<h1>Delete</h1>
+
+<p> Are you sure you wanna delete this employee ? </p>
+
+<form action="{% url 'delete' emp.id %}" method="post">
+    {% csrf_token %}
+    <a class="btn btn-primary" href="{% url 'home' %}" role="button">Cancel</a>
+    <input type="submit" name="Confirm">
+</form>
+
+{% endblock %}

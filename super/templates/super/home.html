@@ -1,0 +1,35 @@
+{% extends 'super/main.html' %}
+{% block content %}
+
+<h1>List of Employees</h1>
+
+<div>
+    <table class="table table-success">
+
+    <thread>
+    <tr>
+      <th scope="col">Employee name</th>
+      <th scope="col">Employee Id</th>
+      <th scope="col">Employee Age</th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+    {% for emp in employees %}
+    <tr>
+      <th scope="row">{{emp.name}}</th>
+      <td>{{emp.eid}}</td>
+      <td>{{emp.age}}</td> 
+      <td><a class="btn btn-primary" href="{% url 'update' emp.id %}" role="button">Update</a></td>
+      <td><a class="btn btn-danger" href="{% url 'delete' emp.id %}" role="button">Delete</a></td>
+      <td><a class="btn btn-light" href="{% url 'profile' emp.id %}" role="button">Profile</a></td>
+    </tr>
+    {% endfor %}
+
+    </tbody>
+    </table>
+</div>
+
+
+{% endblock %}

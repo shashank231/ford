@@ -1,0 +1,45 @@
+{% extends 'super/main.html' %}
+{% block content %}
+<style>
+    h1{
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    a{
+        margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+</style>
+
+<h1>About Employee Types</h1>
+<hr>
+<a class="btn btn-danger" href="{% url 'addtype' %}" role="button">Add Employee Type</a>
+
+<div>
+    <table class="table table-success">
+
+    <thread>
+    <tr>
+      <th scope="col">Type</th>
+      <th scope="col">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+    {% for t1 in types %}
+    <tr>
+      <th scope="row">{{t1.name}}</th>
+      <td>{{t1.description}}</td>
+    </tr>
+    {% endfor %}
+
+    </tbody>
+    </table>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'super/main.html' %}
+{% block content %}
+
+<h1>Search</h1>
+
+<form method="get">
+    <table>
+            {{mfi.form}}
+    </table>
+
+    <input type="submit" name="submit">
+</form>
+
+<div>
+    <table class="table table-success">
+
+    <thread>
+    <tr>
+      <th scope="col">Employee name</th>
+      <th scope="col">Employee Id</th>
+      <th scope="col">Employee Age</th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+    {% for e1 in emp1 %}
+    <tr>
+      <th scope="row">{{e1.name}}</th>
+      <td>{{e1.eid}}</td>
+      <td>{{e1.age}}</td> 
+      <td><a class="btn btn-light" href="{% url 'profile' e1.id %}" role="button">Profile</a></td> 
+    </tr>
+    {% endfor %}
+
+    </tbody>
+    </table>
+</div>
+
+
+{% endblock %}
